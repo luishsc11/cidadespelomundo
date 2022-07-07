@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIDADES PELO MUNDO</title>
+    <link rel="stylesheet" href="stylequiz.css">
+</head>
+<body>
+
+        <header>
+                <nav>
+                        <ul>
+                                <li><a href="index.html" class="linkheader">HOME</a></li>
+                                <li><a href="indexquiz.html" class="linkheader">QUIZ</a></li>
+                                <li><a href="indexcontato.html" class="linkheader">CONTATO</a></li>
+                        </ul>
+                </nav>
+
+                <div class="header-content">
+                        <h1>CIDADES PELO MUNDO</h1>
+                </div>
+        </header>
+
+
+
+        <div class="questoes">
+                <div id="quiz"></div>
+                <button id="submit">Resultados</button>
+                <div id="results"></div>
+        </div>
+
+
+
+
+        <script>
+                var myQuestions = [
+  {
+    question: "Qual a capital da Espanha",
+    answers: {
+      a: 'Madrid',
+      b: 'Barcelona',
+      c: 'Ibiza'
+    },
+    correctAnswer: 'a'
+  },
+  {
+    question: "Qual a cidade mais populosa do Brasil",
+    answers: {
+      a: 'Rio de Janeiro',
+      b: 'São Paulo',
+      c: 'Recife'
+    },
+    correctAnswer: 'b'
+  },
+  {
+    question: "Qual a cidade mais gelada do mundo",
+    answers: {
+      a: 'Moscow',
+      b: 'Oktyabrskoe',
+      c: 'Yakutsk'
+    },
+    correctAnswer: 'c'
+  },
+  {
+    question: "Qual a capital de Marrocos",
+    answers: {
+      a: 'Tânger',
+      b: 'Rabat',
+      c: 'Casablanca'
+    },
+    correctAnswer: 'b'
+  },
+];
+
+var quizContainer = document.getElementById('quiz');
+var resultsContainer = document.getElementById('results');
+var submitButton = document.getElementById('submit');
+
+generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
+
+function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
+
+  function showQuestions(questions, quizContainer){
+
+    var output = [];
+    var answers;
+
+    for(var i=0; i<questions.length; i++){
+      
+
+      answers = [];
+
+      for(letter in questions[i].answers){
+
+        answers.push(
+          '<label>'
+            + '<input type="radio" name="question'+i+'" value="'+letter+'">'
+            + letter + ': '
+            + questions[i].answers[letter]
+          + '</label>'
+        );
+      }
+
+      output.push(
+        '<div class="question">' + questions[i].question + '</div>'
+        + '<div class="answers">' + answers.join('') + '</div>'
+      );
+    }
+
+    quizContainer.innerHTML = output.join('');
+  }
+
+
+  function showResults(questions, quizContainer, resultsContainer){
+    
+    var answerContainers = quizContainer.querySelectorAll('.answers');
+    
+    var userAnswer = '';
+    var numCorrect = 0;
+    
+    for(var i=0; i<questions.length; i++){
+
+      userAnswer = (answerContainers[i].querySelector('input[name=question'+i+']:checked')||{}).value;
+      
+      if(userAnswer===questions[i].correctAnswer){
+        numCorrect++;
+        
+        answerContainers[i].style.color = 'green';
+      }
+
+      else{
+        answerContainers[i].style.color = 'red';
+      }
+    }
+
+    resultsContainer.innerHTML = ' Você acertou ' + numCorrect + ' de ' + questions.length;
+  }
+  showQuestions(questions, quizContainer);
+  
+  submitButton.onclick = function(){
+    showResults(questions, quizContainer, resultsContainer);
+  }
+
+}
+        </script>
+
+
+
+
+
+        <footer>
+            <br>
+            <br>
+            <p>Feito por: Luís Henrique Sousa Caixeta<br>
+            <a href="https://github.com/luishsc11" id="linkado" target="_blank">GitHub</p>
+        </footer>
+</body>
+</html>

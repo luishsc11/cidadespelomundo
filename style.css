@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #D8D5DB;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+header{
+    height: calc(100vh - 150px);
+    background: linear-gradient(to bottom, transparent 10%, #D8D5DB), no-repeat center/cover url('imgheader.jpg');
+}
+
+header nav{
+    display: flex;
+    justify-content: space-around;
+    margin: auto 30px;
+}
+
+header nav ul{
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li{
+    margin: 0 15px;
+}
+
+.linkheader{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+
+.header-content{
+    max-width: 400px;
+    margin: 25px auto;
+    text-align: center;
+}
+
+
+
+
+
+
+.container{
+    text-align: center;
+}
+
+.conteudo{
+    margin: 36px;
+    transition: all .2s ease-in-out;
+    
+}
+
+.link{
+    font-size: 25px;
+    text-decoration: none;
+    color: black;
+}
+
+.conteudo:hover{
+    transform: scale(1.06);
+    transition-duration: .5s;
+}
+
+.video{
+    border-radius: 12px;
+}
+
+
+
+
+
+
+
+
+footer {
+    margin-top: 35px;
+    text-align: center;
+    padding: 3px;
+    background: linear-gradient(to top, transparent 10%, #D8D5DB) #2D3142;
+    color: white;
+}
+
+#linkado{
+    text-decoration: none;
+    color: white;
+}

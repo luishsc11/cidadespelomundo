@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTATO</title>
+    <link rel="stylesheet" href="styleheaderfooter.css">
+    <style>
+        .container{
+            text-align: center;
+        }
+        input{
+            width: 40%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 2px solid #2d3142;
+            background-color: #d8d5db;
+            border-radius: 4px;
+        }
+
+        textarea{
+            width: 40%;
+            height: 44px;
+            padding: 12px 20px;
+            box-sizing: border-box;
+            border: 2px solid #2d3142;
+            border-radius: 4px;
+            background-color: #d8d5db;
+            resize: none;
+        }
+
+        button[type=submit], button[type=reset]{
+            background-color: #2d3142;
+            border: none;
+            border-radius: 18px;
+            color: white;
+            padding: 16px 32px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+        }   
+
+        #botoes{
+            text-align: center;
+            justify-content: center;
+            display: flex;
+        }
+    </style>
+
+    
+</head>
+<body>
+
+    <header>
+        <nav>
+                <ul>
+                        <li><a href="index.html" class="linkheader">HOME</a></li>
+                        <li><a href="indexquiz.html" class="linkheader">QUIZ</a></li>
+                        <li><a href="indexcontato.html" class="linkheader">CONTATO</a></li>
+                </ul>
+        </nav>
+
+        <div class="header-content">
+                <h1>CIDADES PELO MUNDO</h1>
+        </div>
+    </header>
+
+
+
+
+
+
+
+
+    <div class="container">
+        <form action="#" method="post">
+            <div>
+                <label for="Nome">Nome</label>
+                <br>
+                <input type="text" id="nome" name="nome">
+            </div>
+            <br>
+            <div>
+                <label for="email">E-mail</label>
+                <br>
+                <input type="email" id="email" name="email">
+    
+            </div>
+            <br>
+            
+            <div>
+                <label for="msg">Qual cidade gostaria que fosse adicionada</label>
+                <br>
+                <br>
+                <textarea id="msg" name="mensagem"></textarea>
+            </div>
+                <br>
+        </div>
+
+        <div id="botoes">
+            <div>
+                <button type="submit">Enviar sua Mensagem</button>
+            </div>
+            <br>
+            <div>
+                <button type="reset">Redefinir a Mensagem</button>
+            </div>
+            <br>
+        </div>
+    </form>
+
+
+
+
+
+    <footer>
+        <br>
+        <br>
+        <p>Feito por: Luís Henrique Sousa Caixeta<br>
+        <a href="https://github.com/luishsc11" id="linkado" target="_blank">GitHub</p>
+    </footer>
+
+
+</body>
+</html>
